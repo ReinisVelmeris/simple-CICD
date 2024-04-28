@@ -32,7 +32,7 @@ runs:
     - name: Start greetings app
       working-directory: source
       run: |
-        pm2 start app.py --name greetings-app-${{ inputs.environment }} -- --port ${{ inputs.port }} --no-daemon
+        pm2 start app.py --name greetings-app-${{ inputs.environment }} -- --port ${{ inputs.port }}
         pm2 log greetings-app-${{ inputs.environment }}
       shell: cmd
 
