@@ -1,0 +1,20 @@
+inputs:
+    enviroment:
+      description: 'Eviroment for application'
+      default: dev
+  runs:
+    using: "composite" k
+    steps:
+  
+      - name: ... Cloning testing repository ...
+        uses: actions/checkout@v3.5.2
+        with:
+            repository: ReinisVelmeris/course-js-api-framework
+            ref: main
+            path: ./tests
+      - name: ... NPM install ...
+        working-directory: ./tests
+        run: npm install
+      - name: ... Run tests ...
+        working-directory: .tests
+        run: npm run greetings greetings_${{inputs.enviroment}}

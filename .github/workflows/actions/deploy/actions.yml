@@ -1,0 +1,28 @@
+inputs:
+  port:
+    description: 'Port for node appliaction to run'
+    defaul: 1010
+  enviroment:
+    description: 'Eviroment for node application'
+    default: 'DEV'
+runs:
+  using: "composite"
+  steps:
+    - name: ... deploy success ...
+      working-directory: ./source/python-greetings
+      run: echo Deploying to ${{inputs.enviroment}}
+
+    - name: ... Cloning repository ...
+      uses: actions/checkout@v3.5.2
+      with:
+        repository: ReinisVelmeris/pyton-greetings
+        ref: main
+        path: ./source
+
+    - name: ... Delete greetings app ...
+      working-directory: ./source/python-greetings
+      run: pm2 delete greetings-app-${{inputs.enviroment}} & set "errorlevel=0"
+
+    - name: ... Start greetings app ...
+      working-directory: ./source/python-greetings
+      run: pm2 start app.py --name greetings-app-${{inputs.enviroment}} -- --port ${{ inputs.port}}
