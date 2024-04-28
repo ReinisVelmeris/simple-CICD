@@ -29,3 +29,8 @@ runs:
       working-directory: source
       run: pm2 start app.py --name greetings-app-${{inputs.environment}} -- --port ${{ inputs.port}}
       shell: cmd
+
+    - name: ... Test if service is running ...
+      working-directory: source
+      run: curl -X GET http://127.0.0.1:7001/greetings
+      shell: cmd
