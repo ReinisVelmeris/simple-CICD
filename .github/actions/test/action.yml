@@ -12,9 +12,12 @@ inputs:
             repository: mtararujs/python-greetings
             ref: main
             path: tests
+        shell: pwsh
       - name: ... NPM install ...
         working-directory: tests
         run: npm install
+        shell: pwsh
       - name: ... Run tests ...
         working-directory: tests
         run: npm run greetings greetings_${{inputs.environment}}
+        shell: pwsh
