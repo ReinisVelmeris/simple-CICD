@@ -16,7 +16,7 @@ jobs:
       - name: ... Clone Repository ...
         uses: actions/checkout@v3.5.2
         with:
-          repository: ReinisVelmeris/python-greetings
+          repository: https://github.com/mtararujs/python-greetings 
           ref: main
           path: ./source
       - name: ... Install dependencies ...
