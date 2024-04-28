@@ -1,7 +1,7 @@
 inputs:
   port:
-    description: 'Port for node appliaction to run'
-    defaul: 1010
+    description: 'Port for appliaction to run'
+    defaul: 7001
   environment:
     description: 'Eviroment for node application'
     default: 'DEV'
@@ -19,6 +19,10 @@ runs:
         repository: ReinisVelmeris/python-greetings
         ref: main
         path: source
+    - name: ... Check current directory ....
+      working-directory: source
+      run: echo Current directory: %cd%
+      shell: cmd
 
     - name: ... Delete greetings app ...
       working-directory: source
@@ -32,5 +36,5 @@ runs:
 
     - name: ... Test if service is running ...
       working-directory: source
-      run: curl -X GET http://127.0.0.1:7001/greetings
+      run: curl -X GET http://127.0.0.1:${{inputs.port}}/greetings
       shell: cmd
