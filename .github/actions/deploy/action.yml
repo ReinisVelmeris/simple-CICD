@@ -21,7 +21,7 @@ runs:
         path: source
     - name: ... Check current directory ....
       working-directory: source
-      run: echo Current directory: %cd%
+      run: 'echo Current directory: %cd%'
       shell: cmd
 
     - name: ... Delete greetings app ...
