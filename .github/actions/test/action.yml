@@ -1,6 +1,6 @@
 inputs:
     environment:
-      description: 'Eviroment for application'
+      description: 'Testing the application'
       default: dev
 runs:
   using: "composite"

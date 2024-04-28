@@ -21,23 +21,29 @@ runs:
         path: source
     - name: ... Check current directory ....
       working-directory: source
-      run: 'echo Current directory: %cd%'
+      run: |
+        echo checking current directory
+        'echo Current directory: %cd%'
       shell: cmd
 
     - name: ... Delete greetings app ...
       working-directory: source
-      run: pm2 delete greetings-app-${{inputs.environment}} & set "errorlevel=0"
+      run: |
+        echo Delete previous apps
+        pm2 delete greetings-app-${{inputs.environment}} & set "errorlevel=0"
       shell: cmd
 
     - name: Start greetings app
       working-directory: source
       run: |
-        RUNNER_TRACKING_ID=""
+        echo Starting services
         pm2 start app.py --name greetings-app-${{ inputs.environment }} -- --port ${{ inputs.port }}
         pm2 save
       shell: cmd
 
     - name: ... Test if service is running ...
       working-directory: source
-      run: curl -X GET http://127.0.0.1:${{inputs.port}}/greetings
+      run: |
+        echo Test if service is running
+        curl -X GET http://127.0.0.1:${{inputs.port}}/greetings
       shell: cmd
