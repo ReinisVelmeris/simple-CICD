@@ -8,7 +8,7 @@ inputs:
 runs:
   using: "composite"
   steps:
-    - name: ... deploy success ...
+    - name: ... Deploying to ${{inputs.environment}} ...
       working-directory: source
       run: echo Deploying to ${{inputs.environment}}
       shell: cmd
