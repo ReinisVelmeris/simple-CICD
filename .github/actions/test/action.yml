@@ -12,7 +12,6 @@ runs:
         repository: mtararujs/course-js-api-framework 
         ref: main
         path: tests
-      shell: cmd
     - name: ... NPM install ...
       working-directory: tests
       run: npm install
