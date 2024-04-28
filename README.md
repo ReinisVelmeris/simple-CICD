@@ -1,3 +1,3 @@
 # simple-CICD
 
-Runs on self-hosted
+Runs on self-hostedm
