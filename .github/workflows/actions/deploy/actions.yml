@@ -15,7 +15,7 @@ runs:
     - name: ... Cloning repository ...
       uses: actions/checkout@v3.5.2
       with:
-        repository: ReinisVelmeris/pyton-greetings
+        repository: mtararujs/python-greetings
         ref: main
         path: ./source
 
