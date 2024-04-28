@@ -19,7 +19,7 @@ runs:
     - name: Start greetings app
       working-directory: source
       run: |
-        echo Starting services
+        'echo Starting services'
         pm2 start app.py --name greetings-app-${{ inputs.environment }} -- --port ${{ inputs.port }}
       shell: cmd
 
