@@ -21,7 +21,7 @@ jobs:
           path: source
       - name: ... Install dependencies ...
         working-directory: source
-        run: pip3 install -r requirements.txt
+        run: pip3 install -r requirements.txt --user
     
   deploy-to-dev:
     name: deploy-to-dev
