@@ -33,7 +33,7 @@ runs:
       working-directory: source
       run: |
         pm2 start app.py --name greetings-app-${{ inputs.environment }} -- --port ${{ inputs.port }}
-        pm2 log greetings-app-${{ inputs.environment }}
+        pm2 save
       shell: cmd
 
     - name: ... Test if service is running ...
