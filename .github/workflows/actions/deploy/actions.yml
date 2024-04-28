@@ -22,6 +22,7 @@ runs:
     - name: ... Delete greetings app ...
       working-directory: source
       run: pm2 delete greetings-app-${{inputs.environment}} & set "errorlevel=0"
+      shell: bash
 
     - name: ... Start greetings app ...
       working-directory: source
