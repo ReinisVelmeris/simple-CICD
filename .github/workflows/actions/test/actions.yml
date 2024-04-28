@@ -9,7 +9,7 @@ inputs:
       - name: ... Cloning testing repository ...
         uses: actions/checkout@v3.5.2
         with:
-            repository: https://github.com/mtararujs/course-js-api-framework 
+            repository: mtararujs/python-greetings
             ref: main
             path: ./tests
       - name: ... NPM install ...
