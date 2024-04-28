@@ -18,9 +18,9 @@ jobs:
         with:
           repository: mtararujs/python-greetings
           ref: main
-          path: ./source
+          path: source
       - name: ... Install dependencies ...
-        working-directory: ./source\python-greetings
+        working-directory: source/python-greetings
         run: pip3 install -r requirements.txt
     
   deploy-to-dev:

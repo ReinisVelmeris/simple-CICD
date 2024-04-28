@@ -11,10 +11,10 @@ inputs:
         with:
             repository: mtararujs/python-greetings
             ref: main
-            path: ./tests
+            path: tests
       - name: ... NPM install ...
-        working-directory: ./tests
+        working-directory: tests
         run: npm install
       - name: ... Run tests ...
-        working-directory: .tests
+        working-directory: tests
         run: npm run greetings greetings_${{inputs.environment}}
