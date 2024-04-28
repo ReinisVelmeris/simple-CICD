@@ -38,7 +38,7 @@ jobs:
       - uses: ./.github/actions/deploy
         with:
           port: 7001
-          enviroment: 'dev'
+          environment: 'dev'
 
   tests-on-dev:
     name: tests-on-dev
@@ -48,7 +48,7 @@ jobs:
       - uses: actions/checkout@v3.5.2
       - uses: ./.github/actions/test
         with:
-          enviroment: 'dev'
+          environment: 'dev'
 
   deploy-to-staging:
     name: deploy-to-staging
@@ -59,7 +59,7 @@ jobs:
       - uses: ./.github/actions/deploy
         with:
           port: 7002
-          enviroment: 'staging'   
+          environment: 'staging'   
 
   tests-on-staging:
     name: Tests
@@ -69,7 +69,7 @@ jobs:
       - uses: actions/checkout@v3.5.2
       - uses: ./.github/actions/test
         with:
-          enviroment: 'staging'
+          environment: 'staging'
 
   deploy-to-preprod:
     name: deploy-to-preprod
@@ -80,7 +80,7 @@ jobs:
       - uses: ./.github/actions/deploy
         with:
           port: 7003
-          enviroment: 'preprod'     
+          environment: 'preprod'     
 
   tests-on-preprod:
     name: tests-on-preprod
@@ -90,7 +90,7 @@ jobs:
       - uses: actions/checkout@v3.5.2
       - uses: ./.github/actions/test
         with:
-          enviroment: 'preprod'
+          environment: 'preprod'
 
   deploy-to-prod:
     name: deploy-to-prod
@@ -101,7 +101,7 @@ jobs:
       - uses: ./.github/actions/deploy
         with:
           port: 7004
-          enviroment: 'prod'   
+          environment: 'prod'   
   
   tests-on-prod:
     name: tests-on-prod
@@ -111,4 +111,4 @@ jobs:
       - uses: actions/checkout@v3.5.2
       - uses: ./.github/actions/test
         with:
-          enviroment: 'prod'
+          environment: 'prod'

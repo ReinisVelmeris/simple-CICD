@@ -2,7 +2,7 @@ inputs:
   port:
     description: 'Port for node appliaction to run'
     defaul: 1010
-  enviroment:
+  environment:
     description: 'Eviroment for node application'
     default: 'DEV'
 runs:
@@ -10,7 +10,7 @@ runs:
   steps:
     - name: ... deploy success ...
       working-directory: ./source/python-greetings
-      run: echo Deploying to ${{inputs.enviroment}}
+      run: echo Deploying to ${{inputs.environment}}
 
     - name: ... Cloning repository ...
       uses: actions/checkout@v3.5.2
@@ -21,8 +21,8 @@ runs:
 
     - name: ... Delete greetings app ...
       working-directory: ./source/python-greetings
-      run: pm2 delete greetings-app-${{inputs.enviroment}} & set "errorlevel=0"
+      run: pm2 delete greetings-app-${{inputs.environment}} & set "errorlevel=0"
 
     - name: ... Start greetings app ...
       working-directory: ./source/python-greetings
-      run: pm2 start app.py --name greetings-app-${{inputs.enviroment}} -- --port ${{ inputs.port}}
+      run: pm2 start app.py --name greetings-app-${{inputs.environment}} -- --port ${{ inputs.port}}
