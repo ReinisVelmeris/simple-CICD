@@ -20,7 +20,7 @@ jobs:
           ref: main
           path: source
       - name: ... Install dependencies ...
-        working-directory: source/python-greetings
+        working-directory: source\python-greetings
         run: pip3 install -r requirements.txt
     
   deploy-to-dev:

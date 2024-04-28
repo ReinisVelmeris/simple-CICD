@@ -9,7 +9,7 @@ runs:
   using: "composite"
   steps:
     - name: ... deploy success ...
-      working-directory: source/python-greetings
+      working-directory: source\python-greetings
       run: echo Deploying to ${{inputs.environment}}
 
     - name: ... Cloning repository ...
@@ -20,9 +20,9 @@ runs:
         path: source
 
     - name: ... Delete greetings app ...
-      working-directory: source/python-greetings
+      working-directory: source\python-greetings
       run: pm2 delete greetings-app-${{inputs.environment}} & set "errorlevel=0"
 
     - name: ... Start greetings app ...
-      working-directory: source/python-greetings
+      working-directory: source\python-greetings
       run: pm2 start app.py --name greetings-app-${{inputs.environment}} -- --port ${{ inputs.port}}
