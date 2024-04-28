@@ -2,22 +2,22 @@ inputs:
     environment:
       description: 'Eviroment for application'
       default: dev
-  runs:
-    using: "composite"
-    steps:
+runs:
+  using: "composite"
+  steps:
   
-      - name: ... Cloning testing repository ...
-        uses: actions/checkout@v3.5.2
-        with:
-            repository: mtararujs/course-js-api-framework 
-            ref: main
-            path: tests
-        shell: cmd
-      - name: ... NPM install ...
-        working-directory: tests
-        run: npm install
-        shell: cmd
-      - name: ... Run tests ...
-        working-directory: tests
-        run: npm run greetings greetings_${{inputs.environment}}
-        shell: cmd
+    - name: ... Cloning testing repository ...
+      uses: actions/checkout@v3.5.2
+      with:
+        repository: mtararujs/course-js-api-framework 
+        ref: main
+        path: tests
+      shell: cmd
+    - name: ... NPM install ...
+      working-directory: tests
+      run: npm install
+      shell: cmd
+    - name: ... Run tests ...
+      working-directory: tests
+      run: npm run greetings greetings_${{inputs.environment}}
+      shell: cmd
