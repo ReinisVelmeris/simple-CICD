@@ -11,6 +11,7 @@ runs:
     - name: ... deploy success ...
       working-directory: source
       run: echo Deploying to ${{inputs.environment}}
+      shell: pwsh
 
     - name: ... Cloning repository ...
       uses: actions/checkout@v3.5.2
@@ -18,7 +19,6 @@ runs:
         repository: mtararujs/python-greetings
         ref: main
         path: source
-      shell: pwsh
 
     - name: ... Delete greetings app ...
       working-directory: source
